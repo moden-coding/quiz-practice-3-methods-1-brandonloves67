@@ -3,9 +3,11 @@
  * A pre-written method called processScore and a main method for testing.
  *
  * Note:
- * You will modify processScore() over the course of this quiz. Completing task 2 may cause task 1
- * to not work any longer. That's OK! Similarly, completing task 3 might cause task 2 to no longer work.
- ##############################################################################################
+ * You will modify processScore() over the course of this quiz. Completing task
+ * 2 may cause task 1
+ * to not work any longer. That's OK! Similarly, completing task 3 might cause
+ * task 2 to no longer work.
+ * ##############################################################################################
  * TASK 1:
  * Modify processScore() so it will PRINT a fixed score of 100.
  *
@@ -13,7 +15,7 @@
  * processScore()
  *
  * STOP HERE FOR: 'B-'
- ##############################################################################################
+ * ##############################################################################################
  * TASK 2:
  * Modify processScore() so that:
  *
@@ -25,14 +27,14 @@
  * with a print output of: 10
  *
  * STOP HERE FOR: 'B'
- ##############################################################################################
+ * ##############################################################################################
  * TASK 3:
  * Modify processScore() from task 2 so that:
  *
  * 1. Instead of printing, it RETURNS x + 3 (as an int).
  *
  * STOP HERE FOR: 'B+'
- ##############################################################################################
+ * ##############################################################################################
  * TASK 4:
  * Modify processScore() from task 3 so that:
  *
@@ -40,7 +42,7 @@
  * 2. Otherwise, RETURN x + 3
  *
  * STOP HERE FOR: 'A'
- ##############################################################################################
+ * ##############################################################################################
  * TASK 5:
  * Modify processScore() from task 4 so that:
  * 1. It accepts a second parameter which is a String describing a mode.
@@ -51,8 +53,17 @@
  */
 public class App {
     // You will MODIFY THIS ONE METHOD across tasks 1–5. Do not create new methods.
-    public static void processScore() {
+    public static int processScore(String mode, int x) {
+        if (mode.equals("bonus") && x!=-1) {
+            return x * 2;
+        }
 
+        if (mode.equals("curve")) {
+            return x + 3;
+        }else{
+            return -1;
+        }
+           
     }
 
     public static void main(String[] args) {
@@ -62,27 +73,27 @@ public class App {
 
         // B range
         // System.out.println("Task 2:");
-        // processScore(7);   // should PRINT 10
-        // processScore(15);  // should PRINT 18
+        // processScore(7); // should PRINT 10
+        // processScore(15); // should PRINT 18
 
         // B+ range
         // System.out.println("Task 3:");
-        // int s1 = processScore(7);   // expect 10
-        // int s2 = processScore(15);  // expect 18
+        // int s1 = processScore(7); // expect 10
+        // int s2 = processScore(15); // expect 18
         // System.out.println(s1);
         // System.out.println(s2);
 
         // A range
         // System.out.println("Task 4:");
-        // System.out.println(processScore(-5));   // -1 (invalid)
-        // System.out.println(processScore(120));  // -1 (invalid)
-        // System.out.println(processScore(50));   // 53
+        // System.out.println(processScore(-5)); // -1 (invalid)
+        // System.out.println(processScore(120)); // -1 (invalid)
+        // System.out.println(processScore(50)); // 53
 
         // A+ range
-        // System.out.println("Task 5:");
-        // System.out.println(processScore("bonus", 10)); // 20
-        // System.out.println(processScore("curve", 10)); // 13
-        // System.out.println(processScore("none", 10));  // -1 (unknown)
-        // System.out.println(processScore("bonus", -1)); // -1 (invalid)
+        System.out.println("Task 5:");
+        System.out.println(processScore("bonus", 10)); // 20
+        System.out.println(processScore("curve", 10)); // 13
+        System.out.println(processScore("none", 10)); // -1 (unknown)
+        System.out.println(processScore("bonus", -1)); // -1 (invalid)
     }
 }
